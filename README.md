@@ -1,4 +1,4 @@
 # random-quote-machine
 project for freecodecamp.com
 <br>
-live demo: <a href="http://ryanjamesmcgill.github.io/random-quote-machine/" target="_blank">http://ryanjamesmcgill.github.io/random-quote-machine/</a>
+live demo: <a target="_blank" href="http://ryanjamesmcgill.github.io/random-quote-machine/" >http://ryanjamesmcgill.github.io/random-quote-machine/</a>
