@@ -1,11 +1,25 @@
 $(document).ready(function(){
 	updateQuote();
 	$("#quote-btn").on("click", updateQuote);
+	$("#quote-tweet").on("click", tweetQuote);
 });
 
+var data = {
+	msg:"",
+	author:""
+}
+
+var tweetQuote = function(){
+	var msg = $("#message").text();
+	var author = $("#author").text();
+	var text = '"' + msg + '" ' + author;
+	var url = "http://ryanjamesmcgill.github.io/random-quote-machine/";
+
+	window.open("https://twitter.com/intent/tweet?text="+encodeURIComponent(text)+"&url="+url);
+}
 
 var animationTime = 600;
-var updateQuote =  function(){
+var updateQuote = function(){
 	
 	$("#quote-msg").animate({opacity:0.00, height:'0px'},animationTime);
 
@@ -37,15 +51,13 @@ var updateQuoteDom = function(msg, author){
 	}
 
     text = '';
-	text += '<p id="quote-inner">';
+	text += '<p id="quote-inner"><span id="message">';
 	text += msg;
-	text += '<br>';
-	text += '<i>- ' + author + '</i></p>';  
+	text += '</span><br>';
+	text += '<i id="author">- ' + author + '</i></p>';  
 
-	
 	$("#quote-msg").delay(animationTime+300).html(text);	
 	var h = $("#quote-inner").height()
-	console.log('height');
 	$("#quote-msg").animate({opacity:1.00, height:h+'px'},animationTime);
 };
 
